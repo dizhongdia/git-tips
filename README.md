@@ -1,3 +1,12 @@
+# Git使用教程
+### 环境说明：
+已经下载了Git并且配置好了本地环境变量，windows下鼠标右键有Git GUI和Git Bash如图
+![image](https://user-images.githubusercontent.com/46380119/124349630-ab8bd980-dc22-11eb-8571-8cae2a1f05aa.png)  
+**环境变量的作用**：就是你在cmd下可以直接使用git的命令，不配也行，因为主要就是在Git Bash下进行操作，Bash顾名思义，使用的就是linux命令。
+**环境变量配置方法：**<url>
+**Git下载地址:**https://git-scm.com/downloads
+
+
 **情景2:**
 情景1更多是适用于个人开发的情况，实际上公司的开发更像是：公司建立远程版本库，你克隆到个人仓库，然后再克隆到本地，建立新分支，切换到该分支进行开发。具体的不同公司工作流程不一样。
 
@@ -275,5 +284,24 @@ git push origin feat-beauty -f
 解析：git commit --amend 是增补提交，不会产生新的提交记录，可以用git commit -amend -m "修改信息"修改上一次提交的信息，
 提交到fork的仓库需要-f来强制合并。
 ```
+PR通过后再合并代码到主仓库，然后可以删除本地分支:
+```java
+语法：
+git checkout master
+git branch -D feat-xxx
+git push origin :feat-xxx
+解析：
+切换到主分支，删除本地功能分支，删除origin功能分支。
+示例：
+git checkout master
+git branch -D feat-beauty
+git push origin :feat-beauty
+```
 
+更新本地和origin代码。
+```java
+语法:
+git pull upstream master --rebase
+git pull origin master
+```
 
