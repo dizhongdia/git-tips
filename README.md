@@ -184,6 +184,7 @@ Successfully rebased and updated refs/heads/feat-beauty.
 
 
 结论：并没有冲突，上游的直接把我本地的覆盖了。因为公司的1.html可以说是v2.0，而我本地的还是v1.0，我自己也没有修改1.html的内容，所以没有冲突。
+![image](https://user-images.githubusercontent.com/46380119/124348192-1a653480-dc1b-11eb-8995-52280a593e3f.png)
 
 ![image](https://user-images.githubusercontent.com/46380119/124348052-64014f80-dc1a-11eb-99f4-0aa271a5f2a8.png)
 
@@ -192,7 +193,11 @@ Successfully rebased and updated refs/heads/feat-beauty.
 公司再提交一次版本：![image](https://user-images.githubusercontent.com/46380119/124348060-6cf22100-dc1a-11eb-8418-d8f315d7c65c.png)
 
 本地同时也修改1.html：![image](https://user-images.githubusercontent.com/46380119/124348064-711e3e80-dc1a-11eb-8459-b51d96c16f99.png)
+再次执行上游同步：
 ```java
+语法：
+git pull upstream master --rebase
+结果：
 mayangwu@BAOMAGEGE MINGW64 /i/JAVA_WAIT_TO_DELETE/a/learn-to-git (feat-beauty)
 
 $ git pull upstream master --rebase
@@ -231,4 +236,20 @@ Auto-merging 1.html
 
 CONFLICT (content): Merge conflict in 1.html
 ```
-![image](https://user-images.githubusercontent.com/46380119/124348097-97dc7500-dc1a-11eb-9bd9-fc3952813748.png)
+![image](https://user-images.githubusercontent.com/46380119/124348250-73cd6380-dc1b-11eb-9f14-fb60283c8b88.png)
+出现了版本冲突，其中<<<<到====之间是上游版本的内容，而===到>>>>是本地的内容，可以选择保留某一个来解决冲突，或者撤销这一次的同步操作，或者跳过提交。
+```
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+```
+a)解决冲突：保留要的内容，然后执行命令：
+```java
+git add .
+git rebase --continue
+```
+b)不解决冲突，把冲突的文件变回原样给我。
+```
+git rebase --abort
+
