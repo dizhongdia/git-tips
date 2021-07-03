@@ -1,4 +1,5 @@
-**情景2：**情景1更多是适用于个人开发的情况，实际上公司的开发更像是：公司建立远程版本库，你克隆到个人仓库，然后再克隆到本地，建立新分支，切换到该分支进行开发。具体的不同公司工作流程不一样。
+**情景2:**
+情景1更多是适用于个人开发的情况，实际上公司的开发更像是：公司建立远程版本库，你克隆到个人仓库，然后再克隆到本地，建立新分支，切换到该分支进行开发。具体的不同公司工作流程不一样。
 
 以Git flow为例，公司远程仓库地址为XXX, 那么找到项目主仓库并fork到自己的空间，克隆到本地，新建feature分支用于开发新功能，开发自测，提交本地仓库，检查上游仓库（公司的项目仓库）是否有改动（先添加上游仓库，和它建立连接，然后再pull下来），然后可能涉及到代码冲突，要修正冲突，完毕后向上游仓库发起Merge Request，进行code review，有问题就修改，然后回撤提交，拉取请求以防远程仓库变动，再发起MR。MR通过后再合并代码到主仓库，然后可以删除本地分支，更新本地和origin代码。
 
@@ -32,7 +33,7 @@ Unpacking objects: 100% (4/4), 884 bytes | 2.00 KiB/s, done.
 
 ```
 
-![image-20210703161108550](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210703161108550.png)
+![image](https://user-images.githubusercontent.com/46380119/124348030-43d19080-dc1a-11eb-85e3-e304f22caaf7.png)
 
 进入项目并新建分支并切换到该分支进行开发：
 
@@ -148,7 +149,7 @@ From https://github.com/scutma/learn-to-git
 
 Successfully rebased and updated refs/heads/feat-beauty.
 ```
-![image-20210703161147071](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210703161147071.png)
+![image](https://user-images.githubusercontent.com/46380119/124348043-59df5100-dc1a-11eb-831d-b0359e13ab17.png)
 
 这个时候是有可能会出现冲突的，比如说你改了1.html,然后上游仓库也有人改了1.html并且成功提交到了上游，这个时候就会发生冲突。
 
@@ -184,13 +185,13 @@ Successfully rebased and updated refs/heads/feat-beauty.
 
 结论：并没有冲突，上游的直接把我本地的覆盖了。因为公司的1.html可以说是v2.0，而我本地的还是v1.0，我自己也没有修改1.html的内容，所以没有冲突。
 
-![image-20210703161218213](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210703161218213.png)![image-20210703161220925](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210703161220925.png)
+![image](https://user-images.githubusercontent.com/46380119/124348052-64014f80-dc1a-11eb-99f4-0aa271a5f2a8.png)
 
 那么怎么样才会冲突呢？
 
-公司再提交一次版本：![image-20210703161237518](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210703161237518.png)
+公司再提交一次版本：![image](https://user-images.githubusercontent.com/46380119/124348060-6cf22100-dc1a-11eb-8418-d8f315d7c65c.png)
 
-本地同时也修改1.html：![image-20210703161301044](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210703161301044.png)
+本地同时也修改1.html：![image](https://user-images.githubusercontent.com/46380119/124348064-711e3e80-dc1a-11eb-8459-b51d96c16f99.png)
 ```java
 mayangwu@BAOMAGEGE MINGW64 /i/JAVA_WAIT_TO_DELETE/a/learn-to-git (feat-beauty)
 
@@ -230,5 +231,4 @@ Auto-merging 1.html
 
 CONFLICT (content): Merge conflict in 1.html
 ```
-![image-20210703153725141](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210703153725141.png)
-
+![image](https://user-images.githubusercontent.com/46380119/124348097-97dc7500-dc1a-11eb-9bd9-fc3952813748.png)
