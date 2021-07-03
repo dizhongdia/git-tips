@@ -238,11 +238,17 @@ CONFLICT (content): Merge conflict in 1.html
 ```
 ![image](https://user-images.githubusercontent.com/46380119/124348250-73cd6380-dc1b-11eb-9f14-fb60283c8b88.png)
 出现了版本冲突，其中<<<<到====之间是上游版本的内容，而===到>>>>是本地的内容，可以选择保留某一个来解决冲突，或者撤销这一次的同步操作，或者跳过提交。
+比如上游v1.0和本地v1.0是同步的，上游当前是v2.0，本地当前是v2.0，都对1.html进行更改了，   
+那么当进行同步的时候，会出现冲突，解决冲突的一个逻辑是：此时本地的分支会切换到本地v1.0来进行和上游v2.0的一个抉择（不只是冲突的文件，是本地所有文件都会回到v1.0没冲突的版本，git log查看可知），抉择完毕再进行本地v2.0和上游v2.0的抉择。
 ```
 Resolve all conflicts manually, mark them as resolved with
 "git add/rm <conflicted_files>", then run "git rebase --continue".
 You can instead skip this commit: run "git rebase --skip".
 To abort and get back to the state before "git rebase", run "git rebase --abort".
+(fix conflicts and then run "git rebase --continue")
+(use "git rebase --skip" to skip this patch)
+(use "git rebase --abort" to check out the original branch)
+
 ```
 a)解决冲突：保留要的内容，然后执行命令：
 ```java
@@ -252,4 +258,22 @@ git rebase --continue
 b)不解决冲突，把冲突的文件变回原样给我。
 ```
 git rebase --abort
+```
+版本同步完毕，将分支推送给origin（origin是自己fork的仓库名字）：
+```java
+git push origin <分支名字>
+示例：
+git push origin feat-beauty
+```
+完成后在github上向上游仓库发起Pull Request，请同事进行coding review。
+如果代码有问题，则修改，修改完成后：
+```java
+git add .
+git commit --amend 
+git push origin feat-beauty -f
+
+解析：git commit --amend 是增补提交，不会产生新的提交记录，可以用git commit -amend -m "修改信息"修改上一次提交的信息，
+提交到fork的仓库需要-f来强制合并。
+```
+
 
