@@ -137,7 +137,14 @@ Fork项目到自己的空间；
 
 .gitignore用来配置项目中不需要进行版本管理的文件，支持通配符.和*。
 
-![image](https://user-images.githubusercontent.com/46380119/124352101-d5e49380-dc30-11eb-974b-f1401488c1dc.png)
+![image](https://user-images.githubusercontent.com/46380119/124352101-d5e49380-dc30-11eb-974b-f1401488c1dc.png) <br>
+通过命令行的方式在目录下建立名为.gitignore的文件：<br>
+```
+echo *.jpg>.gitignore
+```
+注意>左右不要有空格 <br>
+![image](https://user-images.githubusercontent.com/46380119/124363832-5080d380-dc70-11eb-970c-a0c47fa02c6b.png) <br>
+
 
 ### vpn下如何git出错解决办法:
 
