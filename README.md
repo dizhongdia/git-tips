@@ -89,7 +89,7 @@ to­ken 具有极高权限，请妥善保管。
 至此，免密输入就完成了。
 在Personal access tokens中可以重新修改token的权限，以及要是忘了token，可以点击Regenerate token重心生成令牌，原来的令牌就会失效，需要重新更新。
 
-![image](https://user-images.githubusercontent.com/46380119/124350419-41296800-dc27-11eb-92ce-4b094055e3f7.png)<br>  
+![image](https://user-images.githubusercontent.com/46380119/124350419-41296800-dc27-11eb-92ce-4b094055e3f7.png) <br>  	
 另外附上官方token创建文档：
 https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
 
@@ -435,7 +435,7 @@ Auto-merging 1.html
 
 CONFLICT (content): Merge conflict in 1.html
 ```
-![image](https://user-images.githubusercontent.com/46380119/124348250-73cd6380-dc1b-11eb-9f14-fb60283c8b88.png)
+![image](https://user-images.githubusercontent.com/46380119/124348250-73cd6380-dc1b-11eb-9f14-fb60283c8b88.png) <br>  	
 出现了版本冲突，其中<<<<到====之间是上游版本的内容，而===到>>>>是本地的内容，可以选择保留某一个来解决冲突，或者撤销这一次的同步操作，或者跳过提交。<br>
 比如上游v1.0和本地v1.0是同步的，上游当前是v2.0，本地当前是v2.0，都对1.html进行更改了，<br>  
 那么当进行同步的时候，会出现冲突，解决冲突的一个逻辑是：此时本地的分支会切换到本地v1.0来进行和上游v2.0的一个抉择（不只是冲突的文件，是本地所有文件都会回到v1.0没冲突的版本，git log查看可知），抉择完毕再进行本地v2.0和上游v2.0的抉择。<br>  
