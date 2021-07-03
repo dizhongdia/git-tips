@@ -48,7 +48,7 @@ git config -l 查看全部配置
    Key：将上面生成的.pub文件中的所有内容复制到这里。
    点击下面的Add SSH key即可。
    然后你就会发现可以免密码访问了
-   ![image](https://user-images.githubusercontent.com/46380119/124350390-19d29b00-dc27-11eb-973a-f000616e5bf6.png)
+   ![image](https://user-images.githubusercontent.com/46380119/124350390-19d29b00-dc27-11eb-973a-f000616e5bf6.png)<br>  
    **HTTPS通信协议：**
    接下来讲一下越来越常用的HTTPS方式的免密码，就是在本地生成.git-credentials文件，在文件中添加用户账号密码，然后在git配置文件中添加配置使得git能访问到这个.git-credentials文件，相当于每次git会先访问.git-credentials去找密码，找到了就不需要我们输入密码了。这样的坏处就是密码是明码保存在本地的，如果是公司的电脑有一定的风险，github还提供了一种Personal access tokens的方法来支持免密登录，github会提供一个token，我们选择要赋予这个token的权限，复制token到本地并配置，就能够免密登录，可以在github上修改这个token 的权限（增加或者删除权限）。
    特别说明：从 2021 年 8 月 13 日开始，我们将在 GitHub.com 上对 Git 操作进行身份验证时不再接受帐户密码。2021年8 月 13 日- 所有经过身份验证的 Git 操作都需要令牌（或 SSH 密钥）身份验证。
@@ -63,7 +63,7 @@ git config -l 查看全部配置
    ![image](https://user-images.githubusercontent.com/46380119/124350395-26ef8a00-dc27-11eb-87ca-6d6eacc309fa.png)
    ![image](https://user-images.githubusercontent.com/46380119/124350398-2951e400-dc27-11eb-842a-7eb82f12f245.png)
 
-![image](https://user-images.githubusercontent.com/46380119/124350403-2bb43e00-dc27-11eb-9517-a7d14599bbb6.png)
+![image](https://user-images.githubusercontent.com/46380119/124350403-2bb43e00-dc27-11eb-9517-a7d14599bbb6.png)<br>  
 生成成功后会有邮件，请妥善保管好 token，复制下来。
 
 ![image](https://user-images.githubusercontent.com/46380119/124350406-3242b580-dc27-11eb-95c6-707fde562a55.png)
@@ -89,7 +89,7 @@ to­ken 具有极高权限，请妥善保管。
 至此，免密输入就完成了。
 在Personal access tokens中可以重新修改token的权限，以及要是忘了token，可以点击Regenerate token重心生成令牌，原来的令牌就会失效，需要重新更新。
 
-![image](https://user-images.githubusercontent.com/46380119/124350419-41296800-dc27-11eb-92ce-4b094055e3f7.png)
+![image](https://user-images.githubusercontent.com/46380119/124350419-41296800-dc27-11eb-92ce-4b094055e3f7.png)<br>  
 另外附上官方token创建文档：
 https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
 
@@ -137,7 +137,8 @@ Fork项目到自己的空间；
 
 .gitignore用来配置项目中不需要进行版本管理的文件，支持通配符.和*。
 
-![image](https://user-images.githubusercontent.com/46380119/124350432-51d9de00-dc27-11eb-9cb3-caf7cbb86653.png)
+![image](https://user-images.githubusercontent.com/46380119/124352101-d5e49380-dc30-11eb-974b-f1401488c1dc.png)
+
 ### vpn下如何git出错解决办法:
 
 **错误信息：**
@@ -147,7 +148,7 @@ fatal: unable to access 'https://github.com/youafaw/test.git/': OpenSSL SSL_conn
 ```
 如果你开启了VPN，很可能是因为代理的问题，这时候设置一下http.proxy就可以了。
 
-![image](https://user-images.githubusercontent.com/46380119/124350435-57372880-dc27-11eb-8419-00ddc650c2e2.png)
+![image](https://user-images.githubusercontent.com/46380119/124351918-d29cd800-dc2f-11eb-9a97-1982b511e241.png)
 
 一定要查看自己的VPN端口号，假如你的端口号是10809，在git bash命令行中输入以下命令即可：
 ```
@@ -163,11 +164,14 @@ git config --global --unset https.proxy
 ### origin是怎么来的：
 ![image](https://user-images.githubusercontent.com/46380119/124350441-64541780-dc27-11eb-8e6d-3897d9f4e580.png)
 
-	创建仓库的时候，github会默认把远程版本库命名为origin，所以可以自行命名，比如
-git remote add akai <url>，那么以后包含origin的命令要替换为akai。		
+创建仓库的时候，github会默认把远程版本库命名为origin，所以可以自行命名，比如
+```
+git remote add akai <url>
+```
+那么以后包含origin的命令要替换为akai。		
 ### 情景模拟：
 
-**情景1:**你在本地有一个项目，想对它进行版本管理。那么可以按以下流程操作：	
+**情景1:** 你在本地有一个项目，想对它进行版本管理。那么可以按以下流程操作：	
 在项目下鼠标右键打开Git Bash，输入命令如下：	
 初始化新版本库，在本地会创建一个.git文件夹：
 
@@ -378,18 +382,18 @@ Successfully rebased and updated refs/heads/feat-beauty.
 ```
 
 
-结论：并没有冲突，上游的直接把我本地的覆盖了。因为公司的1.html可以说是v2.0，而我本地的还是v1.0，我自己也没有修改1.html的内容，所以没有冲突。
+结论：并没有冲突，上游的直接把我本地的覆盖了。因为公司的1.html可以说是v2.0，而我本地的还是v1.0，我自己也没有修改1.html的内容，所以没有冲突。<br>		
 ![image](https://user-images.githubusercontent.com/46380119/124348192-1a653480-dc1b-11eb-8995-52280a593e3f.png)
 
 ![image](https://user-images.githubusercontent.com/46380119/124348052-64014f80-dc1a-11eb-99f4-0aa271a5f2a8.png)
 
-那么怎么样才会冲突呢？
+那么怎么样才会冲突呢？		
 
 公司再提交一次版本：![image](https://user-images.githubusercontent.com/46380119/124348060-6cf22100-dc1a-11eb-8418-d8f315d7c65c.png)
 
-本地同时也修改1.html：![image](https://user-images.githubusercontent.com/46380119/124348064-711e3e80-dc1a-11eb-8459-b51d96c16f99.png)
-再次执行上游同步：
-​```java
+本地同时也修改1.html：![image](https://user-images.githubusercontent.com/46380119/124348064-711e3e80-dc1a-11eb-8459-b51d96c16f99.png)<br>				
+再次执行上游同步：	
+```java
 语法：
 git pull upstream master --rebase
 结果：
@@ -432,9 +436,9 @@ Auto-merging 1.html
 CONFLICT (content): Merge conflict in 1.html
 ```
 ![image](https://user-images.githubusercontent.com/46380119/124348250-73cd6380-dc1b-11eb-9f14-fb60283c8b88.png)
-出现了版本冲突，其中<<<<到====之间是上游版本的内容，而===到>>>>是本地的内容，可以选择保留某一个来解决冲突，或者撤销这一次的同步操作，或者跳过提交。
-比如上游v1.0和本地v1.0是同步的，上游当前是v2.0，本地当前是v2.0，都对1.html进行更改了，   
-那么当进行同步的时候，会出现冲突，解决冲突的一个逻辑是：此时本地的分支会切换到本地v1.0来进行和上游v2.0的一个抉择（不只是冲突的文件，是本地所有文件都会回到v1.0没冲突的版本，git log查看可知），抉择完毕再进行本地v2.0和上游v2.0的抉择。
+出现了版本冲突，其中<<<<到====之间是上游版本的内容，而===到>>>>是本地的内容，可以选择保留某一个来解决冲突，或者撤销这一次的同步操作，或者跳过提交。<br>
+比如上游v1.0和本地v1.0是同步的，上游当前是v2.0，本地当前是v2.0，都对1.html进行更改了，<br>  
+那么当进行同步的时候，会出现冲突，解决冲突的一个逻辑是：此时本地的分支会切换到本地v1.0来进行和上游v2.0的一个抉择（不只是冲突的文件，是本地所有文件都会回到v1.0没冲突的版本，git log查看可知），抉择完毕再进行本地v2.0和上游v2.0的抉择。<br>  
 ```
 Resolve all conflicts manually, mark them as resolved with
 "git add/rm <conflicted_files>", then run "git rebase --continue".
@@ -510,7 +514,7 @@ git config --global i18n.logoutputencoding utf-8
 set LESSCHARSET=utf-8
 ```
 
-插入图片
+![image](https://user-images.githubusercontent.com/46380119/124351925-dc264000-dc2f-11eb-89ca-cf188b62b388.png)
 
 
 
