@@ -227,3 +227,23 @@ git push
 ```
 
 ![image](https://user-images.githubusercontent.com/46380119/124505403-04fb3080-ddfc-11eb-8b93-b78a150161c6.png) <br>
+
+## 存在的问题及优化空间
+
+### 存在的问题：
+
+- cz-cli只是按照代码去安装了，怎么生效的，开发的思路，以及json的配置没有深究。
+
+- scpoe的内容仍没有了解透彻，不会用。
+
+  
+
+### 优化空间：
+
+https://zhuanlan.zhihu.com/p/34223150提及的一些功能没有去实现。
+
+- 除Angluar的规范外，还可以定义自己团队的规范
+- 可以配置校验提交是否符合规范
+- 自动生成版本号
+
+
