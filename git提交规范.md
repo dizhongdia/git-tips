@@ -28,23 +28,23 @@
 
 **简要解析：**
 
-> <type>(<scope>): <subject>
+> `<type>(<scope>): <subject>`
 
 type为提交的类型，scope为提交的范围，哪个位置的文件改变了，可以看到，(<scope>)用()包起来了，表示是可选的，可以要或者不要在提交的时候说明位置，subject为提交的主题，当成标题来写。
 
-> <BLANK LINE>
+> `<BLANK LINE>`
 
 <BLANK LINE>意思是空行，表示上面的`<type>(<scope>): <subject>`写完之后，空一行。
 
-> <body>
+> `<body>`
 
 body为主体内容。
 
-> <BLANK LINE>
+> `<BLANK LINE>`
 
 空行
 
->/ <footer>
+> `<footer>`
 
 footer字面意思是注脚。
 
@@ -107,22 +107,20 @@ Breaking Changes表示重大更改，因为官方文档
 ## 遵循Angular规范的提交的案例
 
 github上Angular官方的Angular规范说明项目本身就遵循了规范，项目地址为[Angular团队使用的规范](https://github.com/angular/angular.js)。<br>
+![image](https://user-images.githubusercontent.com/46380119/124504532-48549f80-ddfa-11eb-8571-2c53b7883c39.png)
+![image](https://user-images.githubusercontent.com/46380119/124504576-5aced900-ddfa-11eb-9ec2-b88c2f779808.png)
+![image](https://user-images.githubusercontent.com/46380119/124504591-61f5e700-ddfa-11eb-9925-ec2c7f9dc039.png)
+![image](https://user-images.githubusercontent.com/46380119/124504609-67ebc800-ddfa-11eb-8a04-8245982a78f3.png)
+![image](https://user-images.githubusercontent.com/46380119/124504624-6f12d600-ddfa-11eb-94c0-bf2f39505d1f.png)
 
-![image-20210706005917299](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706005917299.png)
 
-![image-20210706004939734](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706005905356.png)
-
-![image-20210706005105541](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706005105541.png)
-
-![image-20210706005221227](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706005221227.png)
-
-![image-20210706005346148](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706005346148.png)
 
 [**AngularJS Git Commit Message Conventions**文档中的例子](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.uyo6cb12dt6w)
+![image](https://user-images.githubusercontent.com/46380119/124504685-8fdb2b80-ddfa-11eb-9b88-0b09bc394343.png)
+![image](https://user-images.githubusercontent.com/46380119/124504692-91a4ef00-ddfa-11eb-934e-b36fd2b4ef00.png)
+![image](https://user-images.githubusercontent.com/46380119/124504992-20b20700-ddfb-11eb-8112-2a51bf6f9123.png)
 
-![image-20210706010607419](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706010607419.png)
 
-![image-20210706010710205](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706010710205.png)
 
 ## cz-cli配置
 
@@ -146,7 +144,7 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 最浅显的就是命令执行完毕，在路径C:->users->XX用户->AppData->Roaming->npm->node_modules中会多了commitizen和cz-conventional-changelog两个文件夹。
 
-**存在的疑惑：**是怎么和git相作用使得git cz生效的，package.json文件配置的含义。
+**存在的疑惑**是怎么和git相作用使得git cz生效的，package.json文件配置的含义。
 
 疑惑解答参考：http://www.babyitellyou.com/details?id=60669c980a6c6440e056057b
 
@@ -203,27 +201,24 @@ $ git cz
 
 1.选择feat<br>
 
-![image-20210706011502428](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706011502428.png)
+![image](https://user-images.githubusercontent.com/46380119/124505259-a635b700-ddfb-11eb-9d6d-d9ead813877b.png) <br>
 
 2.scope输入*<br>
 
-![image-20210706011623038](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706011623038.png)
-
+![image](https://user-images.githubusercontent.com/46380119/124505285-b2217900-ddfb-11eb-8cc5-b40c9e19508d.png) <br>
 3.subject输入增加了美图的功能<br>
 
-![image-20210706011721749](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706011721749.png)
-
-4.body输入过去没有美图功能，很真实，没人主动和我聊天；增加了美图功能，巴拉巴拉<br>![image-20210706012042322](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706012042322.png)
-
+![image](https://user-images.githubusercontent.com/46380119/124505292-b9488700-ddfb-11eb-9e70-baeeeb72bda6.png) <br>
+4.body输入过去没有美图功能，很真实，没人主动和我聊天；增加了美图功能，巴拉巴拉<br>
+![image](https://user-images.githubusercontent.com/46380119/124505365-e8f78f00-ddfb-11eb-94c4-64749bfbf2c3.png) <br>
 
 
 5.footer选择n<br>
 
-![image-20210706012129808](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706012129808.png)
-
+![image](https://user-images.githubusercontent.com/46380119/124505382-f7de4180-ddfb-11eb-9160-c11cbe1cfb11.png) <br>
 执行完毕
 
-![image-20210706012200511](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706012200511.png)
+![image](https://user-images.githubusercontent.com/46380119/124505394-00367c80-ddfc-11eb-904c-347c595e3a38.png) <br>
 
 输入`git push`
 
@@ -231,4 +226,4 @@ $ git cz
 git push
 ```
 
-![image-20210706012447607](C:\Users\mayangwu\AppData\Roaming\Typora\typora-user-images\image-20210706012447607.png)
+![image](https://user-images.githubusercontent.com/46380119/124505403-04fb3080-ddfc-11eb-8b93-b78a150161c6.png) <br>
